@@ -28,7 +28,12 @@ const UsuariosSchema = new Schema({
         type: String,
         enum: ['free', 'basic', 'premium'],
         default: 'free'
+    },
+    estado:{
+        type: Boolean,
+        default: true
     }
+
 })
 
 const UsuariosModel = model('usuarios', UsuariosSchema)
