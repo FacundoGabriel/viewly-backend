@@ -1,7 +1,7 @@
+require('./db/config.db')
 const express = require('express')
 const app = express()
 
-  
 app.use(express.json())
 
 app.use('/api/usuarios', require('../src/routes/usuarios.routes'))
