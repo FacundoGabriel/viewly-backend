@@ -150,6 +150,13 @@ const obtenerEstadisticasDashboardDB = async (idUsuario) => {
       const seriesUltimoMes = todasSeries.filter(serie => {
         return new Date(serie.createdAt) >= haceUnMes;
       });
+
+      const conteoPorPlataforma = todasSeries.reduce((acc, serie) => {
+        const plataforma = serie.plataforma || "Sin especificar";
+        acc[plataforma] = (acc[plataforma] || 0) + 1;
+        return acc;
+      }, {});
+      
   
       const seriesMesAnterior = todasSeries.filter(serie => {
         const fecha = new Date(serie.createdAt);
@@ -178,6 +185,7 @@ const obtenerEstadisticasDashboardDB = async (idUsuario) => {
           promedioPuntaje: promedioPuntaje.toFixed(2),
           diferenciaPorcentual: diferenciaPorcentual.toFixed(2),
           porcentajeVolveriaVer: porcentajeVolveriaVer.toFixed(2),
+          seriesPorPlataforma: conteoPorPlataforma
         },
         statusCode: 200,
       };
