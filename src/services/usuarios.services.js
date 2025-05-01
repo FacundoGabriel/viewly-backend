@@ -63,8 +63,8 @@
 
         if (!usuarioExiste) {
         return {
-            msg: "ERROR. El usuario y/o contraseña incorrectas. CORREO",
-            statusCode: 409,
+            msg: "ERROR. El usuario y/o contraseña incorrectas.",
+            statusCode: 401,
         };
         }
 
@@ -95,8 +95,8 @@
         };
         } else {
         return {
-            msg: "ERROR. El usuario y/o contraseña incorrectas. CONTRASEÑA",
-            statusCode: 409,
+            msg: "ERROR. El usuario y/o contraseña incorrectas.",
+            statusCode: 401,
         };
         }
     } catch (error) {
