@@ -12,7 +12,7 @@ const SerieSchema = new Schema({
     type: String,
     required: true,
     trim: true,
-    enum: ['Netflix', 'Prime Video', 'HBO Max', 'Disney+', 'Crunchyroll', 'Star+', 'Apple TV+', 'Paramount+']
+    enum: ['Netflix', 'Prime Video', 'HBO Max', 'Disney+', 'Crunchyroll', 'Star+', 'Apple TV+', 'Paramount+', 'Otra']
   },
   reseña: {
     type: String,
