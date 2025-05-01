@@ -58,12 +58,12 @@
     try {
 
         const usuarioExiste = await UsuariosModel.findOne({
-        nombreUsuario: body.nombreUsuario,
+        emailUsuario: body.emailUsuario,
         });
 
         if (!usuarioExiste) {
         return {
-            msg: "ERROR. El usuario y/o contraseña incorrectas. USUARIO",
+            msg: "ERROR. El usuario y/o contraseña incorrectas. CORREO",
             statusCode: 409,
         };
         }

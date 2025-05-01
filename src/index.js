@@ -1,6 +1,11 @@
 require('./db/config.db')
 const express = require('express')
 const app = express()
+const cors = require('cors');
+
+app.use(cors({
+    origin: process.env.URL_FRONTEND || 'http://localhost:5173'
+}));
 
 app.use(express.json())
 
