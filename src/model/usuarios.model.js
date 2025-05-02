@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose')
+const generarTokenHabilitar = require('../helpers/generarTokenCuenta')
 
 const UsuariosSchema = new Schema({
     nombreUsuario: {
@@ -31,7 +32,11 @@ const UsuariosSchema = new Schema({
     },
     estado:{
         type: Boolean,
-        default: true
+        default: false
+    },
+    tokenHabilitar:{
+        type: String,
+        default: generarTokenHabilitar
     }
 
 })
