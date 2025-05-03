@@ -32,6 +32,8 @@ const emailRegistro = async (datos) => {
   </div>
 `
   });
+
+  console.log(datos)
 };
 
 module.exports = emailRegistro;
