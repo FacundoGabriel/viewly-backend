@@ -2,7 +2,7 @@ const { Resend } = require('resend');
 require('dotenv').config();
 
 const emailRegistro = async (datos) => {
-  const resend = new Resend('re_XLAVfzRz_NBhSndxqXnHM3eNR3KEwDcsu');
+  const resend = new Resend(process.env.API_KEY_RESEND);
 
   const { emailUsuario, nombreUsuario, token } = datos;
 
