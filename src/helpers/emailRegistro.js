@@ -1,5 +1,6 @@
 const { Resend } = require('resend');
 
+
 const emailRegistro = async (datos) => {
   const resend = new Resend(process.env.API_KEY_RESEND);
 
@@ -19,7 +20,7 @@ const emailRegistro = async (datos) => {
       Por favor, confirmá tu cuenta haciendo clic en el siguiente botón:
     </p>
     <p style="text-align: center;">
-      <a href="${process.env.URL_FRONTEND}/api/usuarios/confirmar/${token}" 
+      <a href="${process.env.URL_FRONTEND}/confirmar/${token}" 
          style="display: inline-block; padding: 10px 20px; background-color: #9333ea; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
         Confirmar cuenta
       </a>
