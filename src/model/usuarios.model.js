@@ -32,7 +32,7 @@ const UsuariosSchema = new Schema({
     },
     estado:{
         type: Boolean,
-        default: false
+        default: true
     },
     tokenHabilitar:{
         type: String,

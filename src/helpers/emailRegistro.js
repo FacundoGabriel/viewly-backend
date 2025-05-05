@@ -4,7 +4,11 @@ const { Resend } = require('resend');
 const emailRegistro = async (datos) => {
   const resend = new Resend(process.env.API_KEY_RESEND);
 
+  console.log(datos)
+
   const { emailUsuario, nombreUsuario, token } = datos;
+
+  console.log(datos)
 
   await resend.emails.send({
     from: 'onboarding@resend.dev',
@@ -33,7 +37,7 @@ const emailRegistro = async (datos) => {
 `
   });
 
-  console.log(datos)
+
 };
 
 module.exports = emailRegistro;
