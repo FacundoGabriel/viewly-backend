@@ -1,5 +1,5 @@
 const UsuariosModel = require("../model/usuarios.model")
-const { registrarUsuarioDB, iniciarSesionUsuarioDB, obtenerPerfilUsuarioDB, habilitarCuentaDB } = require("../services/usuarios.services")
+const { registrarUsuarioDB, iniciarSesionUsuarioDB, obtenerPerfilUsuarioDB, habilitarCuentaDB, solicitarResetPasswordDB, resetearPasswordDB } = require("../services/usuarios.services")
 
 const registrarUsuario = async(req, res)=>{
     const { msg, statusCode, error } = await registrarUsuarioDB(req.body)
@@ -39,9 +39,33 @@ const habilitarCuenta = async(req, res)=>{
         res.status(statusCode).json({error})
     }
 }
+
+const solicitarResetPassword = async (req, res) => {
+  const { msg, statusCode, error } = await solicitarResetPasswordDB(req.body);
+  try {
+      res.status(statusCode).json({ msg });
+  } catch {
+      res.status(statusCode).json({ error });
+  }
+};
+
+const resetearPassword = async (req, res) => {
+    const { token } = req.params;
+    const { msg, statusCode, error } = await resetearPasswordDB(token, req.body);
+    try {
+        res.status(statusCode).json({ msg });
+    } catch {
+        res.status(statusCode).json({ error });
+    }
+};
+
+
+
 module.exports = {
     registrarUsuario,
     iniciarSesionUsuario,
     obtenerPerfilUsuario,
-    habilitarCuenta
+    habilitarCuenta,
+    solicitarResetPassword,
+    resetearPassword
 }

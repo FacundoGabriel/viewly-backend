@@ -32,12 +32,16 @@ const UsuariosSchema = new Schema({
     },
     estado:{
         type: Boolean,
-        default: true
+        default: false
     },
     tokenHabilitar:{
         type: String,
         default: generarTokenHabilitar
-    }
+    },
+    tokenReset: {
+        type: String,
+        default: null
+      },
 
 })
 
