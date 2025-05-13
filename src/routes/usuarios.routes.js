@@ -11,4 +11,8 @@ router.post('/olvide-password', solicitarResetPassword);
 router.post('/reset-password/:token', resetearPassword);
 
 
+router.get('/ping', (req, res) => {
+  res.status(200).json({ msg: 'pong' });
+});
+
 module.exports = router
